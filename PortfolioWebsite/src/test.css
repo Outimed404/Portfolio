@@ -1,0 +1,49 @@
+.Test {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 25px); /* Utilise la taille fixe des carrés */
+    grid-gap: 10px; /* Espace entre les carrés */
+    position: relative;
+  }
+  
+  .square {
+    width: 25px; /* Taille du carré */
+    height: 25px;
+    background-color: transparent; /* Invisible par défaut */
+    border: 2px solid transparent; /* Bordure invisible par défaut */
+    position: relative;
+    overflow: hidden;
+    pointer-events: auto; /* Autoriser les événements de la souris */
+  }
+  .hover-area {
+  position: absolute;
+  top: -15px; /* Élargir la zone de détection au-dessus */
+  left: -15px; /* Élargir la zone de détection à gauche */
+  width: 55px; /* Élément de détection plus large */
+  height: 55px; /* Élément de détection plus haut */
+  pointer-events: auto; /* Autoriser les événements de la souris */
+}
+  .hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0); /* Transparent */
+    transition: background-color 0.3s ease;
+    z-index: -1; /* Envoyer la couleur derrière la bordure */
+  }
+  
+  .square:hover .hover-effect {
+    background-color: rgba(18, 151, 51, 0); /* Couleur vive au survol */
+  }
+  
